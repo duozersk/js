@@ -1,0 +1,143 @@
+5. Editors advanced
+Zen coding for fast HTML writing
+
+10. Types
+number, string, boolean, null, undefined, symbol, bigInt
+
+11. Operators
++ - if at least one of the operands is string - then concatenation
+, - returns last operand
+
+12. Comparisons
+converts (except for ===) operands into numbers if you try to compare operands of different types
+alert(true == 1)
+alert(false == 0)
+alert(false == '00000')
+
+null and undefined - special things
+
+x = null
+alert(x > 0) // false
+alert(x == 0) // false
+alert(x >= 0) // true
+
+x = undefined
+alert(x > 0) // false
+alert(x == 0) // false
+alert(x < 0) // false
+
+Recommended to not use special things (null, undefined) in comparisons - check for them specifically.
+alert(x === undefined) alert(x === null)
+
+13. UI Basic
+alert(message)
+prompt(message, default) - returns string or null
+comfirm(message) - returns true or false
+
+15. Logical operators - || && !
+! has high priority
+0, '', null, undefined - falsy, converted to false
+
+|| - returns first non-falsy operand, or last operand (last calculated operand)
+to choose first non-falsy variable
+&& - returns first falsy operand, or last operand (last calculated operand)
+(^^ short cycle calculation)
+
+!! - to convert into boolean type
+
+18. switch
+uses === for comparisons
+
+19. Functions
+Function call always returns smth, by default undefined
+
+20. Recursion
+Call stack limit - Maximum call stack size exceeded
+
+21. JavaScript specials
+null is special, not an object like in some other languages
+undefined - declared variable without value, not recommended to assign undefined to vars, better use null
+
+unary + - convert into number: +a + +b
+
+=== - doesn't convert values to the same type
+all others do convert types, usually to number
+
+special values (null and undefined) - not recommended to use in comparison operators
+undefined == null and doesn't equal to anything else
+
+null == 0 // false - this is strict language standard rule
+null > 0 // false - null is converted into number 0
+null >= 0 // true - null is converted into number 0
+
+23. Strings
+\n - caret return
+\ to escape symbols
+\t - tab
+
+strings are immutable
+if you want to change a string variable - assign a new string to it
+ё > я - replace yo to ya before sorting
+
+length, charAt, indexOf, lastIndexOf
+get substring: substring, substr, slice -> use slice
+
+24. Numbers
+Infinity > any other number
+Infinity + any other number = Infinity
+
+NaN - number type, but Not a Number
+NaN === NaN // false
+NaN == NaN // false
+isNaN(NaN) // true
+1 + NaN // NaN
+isFinite - to check for usual number, not Infinity or NaN
+
+type conversion - unary plus or any other arithmetic operator
+parseInt, parseFloat
+parseInt('12px') = 12
+parseFloat('12.3.4.5') = 12.3
+
+12345..toString(16)
+
+Math.floor / Math.ceil / Math.round
+toFixed - returns string
+
++(0.1 + 0.2).toFixed(2)
+
+Math.pow / Math.max / Math.min / Math.random
+
+25. Types conversion
+3 types of conversion:
+
+- string conversion
+-- alert(value)
+-- String(value)
+-- "string" + value
+
+- number conversion
+
+undefined -> NaN
+null -> 0
+true/false -> 1/0
+string -> number / NaN
+
+-- math functions and operators
+-- comparisons, except for:
+--- 2 strings comparison
+--- ===, !==
+--- == for null and undefined (no type conversion for null / undefined in == comparison)
+-- Number(value)
+-- +value
+
+- logical/boolean conversion
+
+undefined, null -> false
+numbers -> true, except for 0, NaN -> false
+strings -> true, even for "0" and " "; but "" -> false
+objects -> true, even empty {}, []
+
+-- if, while, for
+-- !, &&, ||
+-- Boolean(value)
+-- !!value
